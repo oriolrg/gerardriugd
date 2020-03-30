@@ -1,0 +1,217 @@
+html, body {
+    position: relative;
+    margin: 0;
+    background-color: #000;
+    color: #636b6f;
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: 200;
+    margin: 0;
+    padding: 0px; margin: 0px; width: 100%; height: 100%;
+    min-height: 100%;
+}
+.logo{
+    padding-top: 0.8em;;
+}
+.responsiveImage {
+    max-width: 100%;
+    min-width: 150px;
+    height: auto;
+}
+ /* unvisited link */
+a:link {
+    color: white;
+    text-decoration: none;
+
+}
+
+  /* visited link */
+a:visited {
+    color: white;
+    text-decoration: none;
+}
+
+  /* mouse over link */
+a:hover {
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+  /* selected link */
+a:active {
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+#cos {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 120px;
+    height: auto;
+}
+.boto{
+    cursor: pointer;
+}
+#cos .container{
+    background-color: black;
+    height: 100%;
+}
+
+#cos img {
+    transition: transform .9s, filter 1.5s ease-in-out;
+    cursor: pointer;
+}
+#cos img:hover{
+    transform: scale(1.1);
+}
+
+.menu{
+    position: absolute;
+    right: 0;
+    bottom: 0;
+}
+
+.wrapper {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    grid-gap: 0.8em;
+    grid-auto-flow: dense;
+    list-style: none;
+    margin: 1em auto;
+    padding: 0;
+    height: 100%;
+}
+.wrapper div {
+    height: auto;
+    width: 100%;
+    
+}
+.wrapper div img{
+}
+.wrapper div.fila2{
+    grid-row-end: span 2;
+}
+.wrapper div.colum2 {
+    grid-column-end: span 2;
+}
+.wrapper div.columfila2 {
+    grid-column-end: span 2;
+    grid-row-end: span 2;
+}
+
+@media only screen and (min-width: 799px) {
+    .wrapper div.colum3 {
+        grid-column-end: span 3;
+    }
+    .wrapper div.colum2fila3 {
+        grid-column-end: span 2;
+        grid-row-end: span 3;
+    }
+    .wrapper div.colum3fila2 {
+        grid-column-end: span 3;
+        grid-row-end: span 2;
+    }
+    .wrapper div.fila3 {
+        grid-row-end: span 3;
+    }
+    .wrapper div.columfila3 {
+        grid-row-end: span 3;
+        grid-column-end: span 3;
+    }
+    .peu{
+        left: 0;
+        bottom: 0;
+        width: 100%;
+        background-color: black;
+        color: white;
+        text-align: center;
+        opacity: 70%;
+    }
+    .modal-dialog{
+        max-width:80%;
+    }
+    #individualMenu{
+        position: fixed;
+    }
+    .fixat {
+        padding-left: 0;
+        list-style: none;
+        width: 50%;
+    }
+}
+@media only screen and (max-width: 798px) {
+    .wrapper div.colum3 {
+        grid-column-end: span 2;
+    }
+    .wrapper div.colum2fila3 {
+        grid-column-end: span 1;
+        grid-row-end: span 2;
+    }
+    .wrapper div.colum3fila2 {
+        grid-column-end: span 2;
+        grid-row-end: span 1;
+    }
+    .wrapper div.fila3 {
+        grid-row-end: span 2;
+    }
+    .wrapper div.columfila3 {
+        grid-row-end: span 2;
+        grid-column-end: span 2;
+    }
+    .peu{
+        position: relative;
+        left: 0;
+        width: 100%;
+        background-color: black;
+        color: white;
+        text-align: center;
+        opacity: 70%;
+    }
+    .close-modal{
+        height: 2em;
+        width: 2em;
+        z-index: 10000;
+    }
+    .fa-times{
+        font-size: 2em !important;
+    }
+}
+
+
+.wrapper div img {
+    display: block;
+    object-fit: cover;
+    width: 100%;
+    height: 100%;
+}
+
+.peu .row{
+    padding-top: 1em;
+}
+.modal-content{
+    background-color: rgba(0, 0, 0, 0.9);
+    height: 100%;
+    color: white;
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: 200;
+    text-align: left;
+}
+.close-modal{
+    margin: 0 0 0 auto;
+    cursor: pointer;
+    margin-right: 1em !important;
+    border-color: lawngreen;
+}
+.fa-times{
+    color:white;
+    position: fixed;
+}
+.portfolio-modal .modal-content {
+    padding: 100px 0px;
+}
+.individual{
+    width: 100%;
+    margin-top: 5px;
+}

@@ -1,2 +1,3 @@
+Sitemap: https://gerardriugd.com/sitemap.xml
 User-agent: *
 Disallow:
