@@ -6,6 +6,8 @@ use Illuminate\Http\Request;
 use App\Projecte;
 use \App\Imatge_paquet;
 use \App\Nosaltres;
+use App;
+use Lang;
 
 class HomeController extends Controller
 {
@@ -22,9 +24,11 @@ class HomeController extends Controller
      */
     public function index()
     {
+        $locale = Lang::getLocale();
         $projectes = Projecte::orderBy('data', 'desc')->get();
         $imatgePaket = Imatge_paquet::all();
         $nosaltres = Nosaltres::first();
+        app()->setLocale($locale);
         foreach ($projectes as $key => $projecte) {
             $projecte->paquetImatge = Imatge_paquet::where('id_projecte', $projecte->id)->get();
         }
@@ -32,9 +36,11 @@ class HomeController extends Controller
     }
     public function nosaltres()
     {
+        $locale = Lang::getLocale();
         $projectes = Projecte::orderBy('data', 'desc')->get();
         $imatgePaket = Imatge_paquet::all();
         $nosaltres = Nosaltres::first();
+        app()->setLocale($locale);
         foreach ($projectes as $key => $projecte) {
             $projecte->paquetImatge = Imatge_paquet::where('id_projecte', $projecte->id)->get();
         }

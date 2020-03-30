@@ -47,7 +47,10 @@ class AdministraController extends Controller
     public function getNosaltres()
     {
         $nosaltres = Nosaltres::first();
-        return view('admin.nosaltres.nosaltres')->with('editdata', $nosaltres);
+
+        $nosaltresTranslation = $nosaltres->getTranslations();
+        //return $nosaltresTranslation['descripcioCurta'];
+        return view('admin.nosaltres.nosaltres')->with('editdata', $nosaltres)->with('editdataTranslation', $nosaltresTranslation);
     }
     public function setNosaltres(Request $request)
     {
@@ -58,24 +61,21 @@ class AdministraController extends Controller
             $nosaltres = new Nosaltres();
         }
         $nosaltres->nom = $request->nom;
-        $nosaltres->descripcioCurta = $request->descripcioCurta;
-        $nosaltres->descripcioLlarga = $request->descripcioLlarga;
+        $nosaltres->setTranslation('descripcioCurta', 'ca', $request->descripcioCurta);
+        $nosaltres->setTranslation('descripcioLlarga', 'ca', $request->descripcioLlarga);
         $nosaltres->email = $request->email;
         $nosaltres->telefon = $request->telefon;
         $nosaltres->adressa = $request->adressa;
         $nosaltres->paraulesClau = $request->paraulesClau;
         $nosaltres->instagram = $request->instagram;
-        $nosaltres->setTranslation('nom', 'en', 'Updated name in English');
 
-        $nosaltres->save();/*
-        $nosaltres-> = $request->descripcioCurtaES;
-        $nosaltres-> = $request->descripcioLargaES;
-        $nosaltres-> = $request->nomEN;
-        $nosaltres-> = $request->descripcioCurtaEN;
-        $nosaltres-> = $request->descripcioLargaEN;
-        $nosaltres-> = $request->instagram;*/
+        $nosaltres->setTranslation('descripcioCurta', 'es', $request->descripcioCurtaES);
+        $nosaltres->setTranslation('descripcioLlarga', 'es', $request->descripcioLlargaES);
+        $nosaltres->setTranslation('descripcioCurta', 'en', $request->descripcioCurtaEN);
+        $nosaltres->setTranslation('descripcioLlarga', 'en', $request->descripcioLlargaEN);
         $nosaltres->save();
-        return view('admin.nosaltres.nosaltres')->with('editdata', $nosaltres);
+        $nosaltresTranslation = $nosaltres->getTranslations();
+        return view('admin.nosaltres.nosaltres')->with('editdata', $nosaltres)->with('editdataTranslation', $nosaltresTranslation);
     }
     public function novaProjecte()
     {

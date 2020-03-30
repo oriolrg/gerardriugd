@@ -11,5 +11,5 @@ class Nosaltres extends Model
 
     protected $table = 'table_nosaltres';
 
-    public $translatable = ['nom, descripcioCurta, descripcioLlarga'];
+    public $translatable = ['descripcioCurta', 'descripcioLlarga'];
 }

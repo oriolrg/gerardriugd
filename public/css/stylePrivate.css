@@ -181,3 +181,6 @@ a[data-toggle="collapse"] {
     margin-left: auto;
     margin-right: auto;
 }
+.multillenguatge{
+    column-count: 3;
+}
