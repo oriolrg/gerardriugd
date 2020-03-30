@@ -64,7 +64,10 @@ class AdministraController extends Controller
         $nosaltres->telefon = $request->telefon;
         $nosaltres->adressa = $request->adressa;
         $nosaltres->paraulesClau = $request->paraulesClau;
-        $nosaltres->instagram = $request->instagram;/*
+        $nosaltres->instagram = $request->instagram;
+        $nosaltres->setTranslation('nom', 'en', 'Updated name in English');
+
+        $nosaltres->save();/*
         $nosaltres-> = $request->descripcioCurtaES;
         $nosaltres-> = $request->descripcioLargaES;
         $nosaltres-> = $request->nomEN;
