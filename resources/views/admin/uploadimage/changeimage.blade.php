@@ -8,7 +8,7 @@
 				<legend>Imatge Portada</legend>
 				<div id="image_previewPortada" >
 					<div id="imatgePortada">
-						<img id="profileImage" class="thumb {{$editdata->imatge}}" src="{{ URL::asset('public/') }}/profile_images/{{$editdata->imatge}}">
+						<img id="profileImage" class="thumb {{$editdata->imatge}}" src="{{ URL::asset('/') }}/profile_images/{{$editdata->imatge}}">
 						<input type="button" class="btn btn-small btn-danger eliminar" data="{{$editdata->imatge}}" value="Elimina aquesta imatge"/>
 					</div>
 					<div id="inputFilePortada">
@@ -44,7 +44,7 @@
 					<div id="image_previewPortada" >
 						<div id="imatgePaquet{{$paquetImatge->id}}">
 							<div id="{{$paquetImatge->imatge}}">
-								<img id="profileImage" class="thumb {{$paquetImatge->imatge}}" src="{{ URL::asset('public/') }}/profile_images/{{$paquetImatge->imatge}}"  name="{{$paquetImatge->id}}">
+								<img id="profileImage" class="thumb {{$paquetImatge->imatge}}" src="{{ URL::asset('/') }}/profile_images/{{$paquetImatge->imatge}}"  name="{{$paquetImatge->id}}">
 								<input type="button" class="btn btn-small btn-danger eliminarImatgePaquet" data="{{$paquetImatge->imatge}}" name="{{$paquetImatge->id}}" value="Elimina aquesta imatge"/>
 							</div>
 						</div>

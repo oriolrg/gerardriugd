@@ -3,9 +3,11 @@
 namespace App;
 
 use Illuminate\Database\Eloquent\Model;
+use Spatie\Translatable\HasTranslations;
 
 class Projecte extends Model
 {
+    use HasTranslations;
     /**
      * The attributes that are mass assignable.
      *
@@ -15,4 +17,5 @@ class Projecte extends Model
         'imatge', 'titol', 'data','frase', 'descripcio', 'instagram',
     ];
     protected $table = 'table_projecte';
+    public $translatable = ['descripcioCurta', 'descripcioLlarga'];
 }

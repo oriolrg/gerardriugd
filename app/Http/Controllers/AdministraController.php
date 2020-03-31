@@ -47,8 +47,8 @@ class AdministraController extends Controller
     public function getNosaltres()
     {
         $nosaltres = Nosaltres::first();
-
         $nosaltresTranslation = $nosaltres->getTranslations();
+        //return $nosaltres;
         //return $nosaltresTranslation['descripcioCurta'];
         return view('admin.nosaltres.nosaltres')->with('editdata', $nosaltres)->with('editdataTranslation', $nosaltresTranslation);
     }
@@ -95,8 +95,12 @@ class AdministraController extends Controller
         ]);
         $projecte = new Projecte();
         $projecte->titol = $request->nom;
-        $projecte->descripcioLlarga = $request->descripcioLlarga;
-        $projecte->descripcioCurta = $request->descripcioCurta;
+        $projecte->setTranslation('descripcioCurta', 'ca', $request->descripcioCurta);
+        $projecte->setTranslation('descripcioLlarga', 'ca', $request->descripcioLlarga);
+        $projecte->setTranslation('descripcioCurta', 'es', $request->descripcioCurta);
+        $projecte->setTranslation('descripcioLlarga', 'es', $request->descripcioLlarga);
+        $projecte->setTranslation('descripcioCurta', 'en', $request->descripcioCurta);
+        $projecte->setTranslation('descripcioLlarga', 'en', $request->descripcioLlarga);
         $projecte->instagram = $request->instagram;
         $projecte->data = $request->data;
         $projecte->filescolumnes = $request->filescolumnes;
@@ -129,7 +133,8 @@ class AdministraController extends Controller
         $projecte = Projecte::where('id', $projecte_id)->first();
         $imatgePaket = Imatge_paquet::all();
         $projecte->paquetImatge = Imatge_paquet::where('id_projecte', $projecte->id)->get();
-        //return $projecte;
+
+        $projecteTranslation = $projecte->getTranslations();
         /*$entrada->nomCA = $entrada->translations->where('locale', 'ca')->first()->nom;
         $entrada->descripcioCA =  $entrada->translations->where('locale', 'ca')->first()->descripcio;
         $entrada->nomES = $entrada->translations->where('locale', 'es')->first()->nom;
@@ -139,7 +144,7 @@ class AdministraController extends Controller
         $entrada->nomFR =  $entrada->translations->where('locale', 'fr')->first()->nom;
         $entrada->descripcioFR =  $entrada->translations->where('locale', 'fr')->first()->descripcio;/*/
         return view('admin.projectes.edit')
-            ->with('editdata', $projecte);
+            ->with('editdata', $projecte)->with('editdataTranslation', $projecteTranslation);
     }
     /**
      * Update the specified resource in storage.
@@ -159,8 +164,12 @@ class AdministraController extends Controller
         ]);
         $projecte = Projecte::where('id', $request->projecte_id)->first();
         $projecte->titol = $request->nom;
-        $projecte->descripcioLlarga = $request->descripcioLlarga;
-        $projecte->descripcioCurta = $request->descripcioCurta;
+        $projecte->setTranslation('descripcioCurta', 'ca', $request->descripcioCurta);
+        $projecte->setTranslation('descripcioLlarga', 'ca', $request->descripcioLlarga);
+        $projecte->setTranslation('descripcioCurta', 'es', $request->descripcioCurtaES);
+        $projecte->setTranslation('descripcioLlarga', 'es', $request->descripcioLargaES);
+        $projecte->setTranslation('descripcioCurta', 'en', $request->descripcioCurtaEN);
+        $projecte->setTranslation('descripcioLlarga', 'en', $request->descripcioLargaEN);
         $projecte->instagram = $request->instagram;
         $projecte->data = $request->data;
         $projecte->filescolumnes = $request->filescolumnes;
@@ -193,8 +202,9 @@ class AdministraController extends Controller
         }
         $projecte->save();
         $projecte->paquetImatge = Imatge_paquet::where('id_projecte', $projecte->id)->get();
+        $projecteTranslation = $projecte->getTranslations();
         return view('admin.projectes.edit')
-            ->with('editdata', $projecte);
+            ->with('editdata', $projecte)->with('editdataTranslation', $projecteTranslation);
     }
     /**
      * Desactiva una entrada.

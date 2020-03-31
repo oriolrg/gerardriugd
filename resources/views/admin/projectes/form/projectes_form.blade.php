@@ -8,30 +8,25 @@
         </thead>
         <tbody>
             <tr>
-                <label>
+                <label for="title">Titol</label>
+                <input type="text" name="nom" id="nom" class="form-control" placeholder="Nom..." value="{{isset($editdata) ? $editdata->titol : ''}}"  maxlength="30" required>
                 <td>
-                    <label for="title">Titol</label>
-                    <input type="text" name="nom" id="nom" class="form-control" placeholder="Nom..." value="{{isset($editdata) ? $editdata->titol : ''}}"  maxlength="30" required>
                     <label for="description">Descripcio curta</label>
-                    <input type="text" name="descripcioCurta" id="descripcioCurta" class="form-control" placeholder="Descripció..." rows="6" value="@isset($editdata) {{$editdata->descripcioCurta}} @endisset" required>
+                    <textarea type="text" name="descripcioCurta" id="descripcioCurta" class="form-control" placeholder="Descripció..." rows="6" required>@isset($editdataTranslation['descripcioCurta']['ca']) {{$editdataTranslation['descripcioCurta']['ca']}} @endisset</textarea>
                     <label for="description">Descripcio llarga</label>
-                    <textarea type="text" name="descripcioLlarga" id="descripcioLlarga" class="form-control" placeholder="Descripció..." rows="6" required>@isset($editdata) {{$editdata->descripcioLlarga}} @endisset</textarea>
+                    <textarea type="text" name="descripcioLlarga" id="descripcioLlarga" class="form-control" placeholder="Descripció..." rows="6" required>@isset($editdataTranslation['descripcioLlarga']['ca']) {{$editdataTranslation['descripcioLlarga']['ca']}} @endisset</textarea>
                 </td>
                 <td>
-                    <label for="title">Nom</label>
-                    <input type="text" name="nomES" id="nom" class="form-control" placeholder="Nom..." value="{{isset($editdata) ? $editdata->nomES : ''}}"  maxlength="30" >
                     <label for="description">Descripcio</label>
-                    <input type="text" name="descripcioCurtaES" id="descripcioCurtaES" class="form-control" placeholder="Descripció..." rows="6" >@isset($editdata) {{$editdata->descripcioCurtaES}} @endisset</textarea>
+                    <textarea type="text" name="descripcioCurtaES" id="descripcioCurtaES" class="form-control" placeholder="Descripció..." rows="6" >@isset($editdataTranslation['descripcioCurta']['es']) {{$editdataTranslation['descripcioCurta']['es']}} @endisset</textarea>
                     <label for="description">Descripcio llarga</label>
-                    <textarea type="text" name="descripcioLargaES" id="descripcioLargaES" class="form-control" placeholder="Descripció..." rows="6" >@isset($editdata) {{$editdata->descripcioLlargaES}} @endisset</textarea>
+                    <textarea type="text" name="descripcioLargaES" id="descripcioLargaES" class="form-control" placeholder="Descripció..." rows="6" >@isset($editdataTranslation['descripcioLlarga']['es']) {{$editdataTranslation['descripcioLlarga']['es']}} @endisset</textarea>
                 </td>
                 <td>
-                    <label for="title">Nom</label>
-                    <input type="text" name="nomEN" id="nom" class="form-control" placeholder="Nom..." value="{{isset($editdata) ? $editdata->nomEN : ''}}"  maxlength="30" >
                     <label for="description">Descripcio</label>
-                    <input type="text" name="descripcioCurtaEN" id="descripcioCurtaEN" class="form-control" placeholder="Descripció..." rows="6" >@isset($editdata) {{$editdata->descripcioCurtaEN}} @endisset</textarea>
+                    <textarea type="text" name="descripcioCurtaEN" id="descripcioCurtaEN" class="form-control" placeholder="Descripció..." rows="6" >@isset($editdataTranslation['descripcioCurta']['en']) {{$editdataTranslation['descripcioCurta']['en']}} @endisset</textarea>
                     <label for="description">Descripcio llarga</label>
-                    <textarea type="text" name="descripcioLargaEN" id="descripcioLargaEN" class="form-control" placeholder="Descripció..." rows="6" >@isset($editdata) {{$editdata->descripcioLlargaEN}} @endisset</textarea>
+                    <textarea type="text" name="descripcioLargaEN" id="descripcioLargaEN" class="form-control" placeholder="Descripció..." rows="6" >@isset($editdataTranslation['descripcioLlarga']['en']) {{$editdataTranslation['descripcioLlarga']['en']}} @endisset</textarea>
                 </td>
             </tr>
         </tbody>

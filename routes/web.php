@@ -10,7 +10,7 @@
 | contains the "web" middleware group. Now create something great!
 |
 */
-
+Route::get('/idioma/{llengua}', array('as'=>'set-locale', 'uses'=>'LanguageController@setLocale'));
 Route::get('/',  'HomeController@index');
 Route::get('/nosaltres',  'HomeController@nosaltres');
 Route::get('/logout', '\App\Http\Controllers\Auth\LoginController@logout');

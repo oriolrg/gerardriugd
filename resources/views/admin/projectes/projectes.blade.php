@@ -41,7 +41,7 @@
                     @foreach($projectes as $key => $projecte)
                         <tr>
                             <td>{{ $projecte->titol }}</td>
-                            <td><img src="{{ URL::asset('public/') }}/profile_images/{{$projecte->imatge}}" alt="{{ $projecte->titol }}" class="img-responsive" width="130em" height="130em"></td>
+                            <td><img src="{{ URL::asset('/') }}/profile_images/{{$projecte->imatge}}" alt="{{ $projecte->titol }}" class="img-responsive" width="130em" height="130em"></td>
                             <!-- we will also add show, edit, and delete buttons -->
                             <td>
                                 <!-- edit this nerd (uses the edit method found at GET /nerds/{id}/edit -->

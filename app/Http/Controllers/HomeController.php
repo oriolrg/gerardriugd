@@ -8,6 +8,7 @@ use \App\Imatge_paquet;
 use \App\Nosaltres;
 use App;
 use Lang;
+use Session;
 
 class HomeController extends Controller
 {
@@ -24,7 +25,10 @@ class HomeController extends Controller
      */
     public function index()
     {
-        $locale = Lang::getLocale();
+        $locale = Session::get('locale');
+        if($locale == null){
+            $locale = 'ca';
+        }
         $projectes = Projecte::orderBy('data', 'desc')->get();
         $imatgePaket = Imatge_paquet::all();
         $nosaltres = Nosaltres::first();
@@ -36,7 +40,10 @@ class HomeController extends Controller
     }
     public function nosaltres()
     {
-        $locale = Lang::getLocale();
+        $locale = Session::get('locale');
+        if($locale == null){
+            $locale = 'ca';
+        }
         $projectes = Projecte::orderBy('data', 'desc')->get();
         $imatgePaket = Imatge_paquet::all();
         $nosaltres = Nosaltres::first();

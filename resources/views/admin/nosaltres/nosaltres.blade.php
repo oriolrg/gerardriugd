@@ -2,7 +2,6 @@
 @extends('admin.layouts.sidebar')   
 @section('content')
     <div id="content">
-    <h2>Noslatres</h2>
     @if ($errors->any())
         <div class="alert alert-danger">
             <ul>

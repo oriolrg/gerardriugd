@@ -19,6 +19,15 @@
                     <li>
                         <a href="{{isset($nosaltres->instagram) ? $nosaltres->instagram : ''}}" title="Instagram" target="_blank"><i class="fab fa-instagram fa-2x"></i></a>
                     </li>
+                    <li>
+                        <a href="{{ URL::asset('idioma/ca') }}" title="Català">CA</a>
+                    </li>
+                    <li>
+                        <a href="{{ URL::asset('idioma/es') }}" title="Castellno">ES</a>
+                    </li>
+                    <li>
+                        <a href="{{ URL::asset('idioma/en') }}" title="English">EN</a>
+                    </li>
                 </ul>
             </nav>
         </div>
