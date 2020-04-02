@@ -17,11 +17,7 @@
     }); 
   })(jQuery);
 
-  $(document).ready(function(){
-    $(".portfolio-link").click(function(){
-      $("#portfolioModal1").modal('show');
-    });
-  });
+  //carrega dinamica imatges pakets
   $(document).ready(function(){
     $(".projecteportada").click(function(){
       var projecteId = $( this ). attr("id");
