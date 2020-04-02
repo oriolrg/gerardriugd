@@ -22,32 +22,31 @@
       $("#portfolioModal1").modal('show');
     });
   });
-
-
-  // Este es el método que vamos a llamar
-// cada vez que se detecte una intersección
-function onScrollEvent(entries, observer) {
-  entries.forEach(function(entry) {
-      if (entry.isIntersecting) {
-          var attributes = entry.target.attributes;
-          var src = attributes['data-src'].textContent;
-          entry.target.src = src;
-          entry.target.classList.add('visible');
-      }
+  $(document).ready(function(){
+    $(".projecteportada").click(function(){
+      var projecteId = $( this ). attr("id");
+      var imatge ='';
+      $.ajaxSetup({
+        headers: {
+            'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+        }
+      });
+      $.ajax({
+        type: "get",
+        url: "pakage/"+projecteId,
+        data: projecteId,
+        success: function (result) {
+          jQuery.each(result, function(index, imatgePaket) {
+            imatge += '<img class="individual img-fluid d-block mx-auto" src="public/profile_images/'+imatgePaket.imatge+'" alt="2" title="2">';
+          });
+          console.log(imatge);
+          $('#paket'+projecteId).append(imatge)
+        },
+        error: function (data) {
+            console.log(data.msg);
+        },
+        datatype: 'application/json',
+        //dataType: dataType
+      }); 
+    });
   });
-}
-
-// Utilizamos como objetivos todos los
-// elementos que tengan la clase lazyLoad,
-// que vimos en el HTML de ejemplo.
-var targets = document.querySelectorAll('.lazyLoad');
-
-// Instanciamos un nuevo observador.
-var observer = new IntersectionObserver(onScrollEvent);
-
-// Y se lo aplicamos a cada una de las
-// imágenes.
-targets.forEach(function(entry) {
-  observer.observe(entry);
-});
-

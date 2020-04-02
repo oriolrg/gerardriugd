@@ -2,14 +2,12 @@
 <section id="cos">
     <div class="container">
         <div class="row">
+            <img class="bannerNosaltres" src="{{ asset('public/profile_images/').'/'.$nosaltres->imatge }}" style="width: 100%;"/>
             <div class="col-lg-12 mx-auto">
                 <div class="modal-body">
-                    <p class="item-intro text-white">{{isset($nosaltres->nom) ? $nosaltres->nom : ''}}</p>
-                    <p class="item-intro text-white">{{isset($nosaltres->descripcioCurta) ? $nosaltres->descripcioCurta : ''}}</p>
-                    <p class="item-intro text-white">{{isset($nosaltres->descripcioLlarga) ? $nosaltres->descripcioLlarga : ''}}</p>
-                    <p class="item-intro text-white">{{isset($nosaltres->telefon) ? $nosaltres->telefon : ''}}</p>
-                    <p class="item-intro text-white">{{isset($nosaltres->adressa) ? $nosaltres->adressa : ''}}</p>
-                    <p class="item-intro text-white">{{isset($nosaltres->email) ? $nosaltres->email : ''}}</p>
+                    <h1 class="text-uppercase text-muted">{{isset($nosaltres->titol) ? $nosaltres->titol : ''}}</h1>
+                    <h2 class="item-intro text-muted">{!!isset($nosaltres->textCurt) ? $nosaltres->textCurt : ''!!}</h2>
+                    <h4 class="item-intro text-white">{!!isset($nosaltres->textLlarg) ? $nosaltres->textLlarg : ''!!}</h4>
                 </div>
             </div>
         </div>

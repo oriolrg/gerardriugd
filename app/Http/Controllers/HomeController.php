@@ -53,4 +53,8 @@ class HomeController extends Controller
         }
         return view('nosaltres')->with('nosaltres', $nosaltres);
     }
+    public function imatgesPakets($id, Request $request){
+        $imatgePaket = Imatge_paquet::where('id_projecte', $id)->get('imatge');
+        return $imatgePaket;
+    }
 }

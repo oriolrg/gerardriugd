@@ -13,6 +13,7 @@
 Route::get('/idioma/{llengua}', array('as'=>'set-locale', 'uses'=>'LanguageController@setLocale'));
 Route::get('/',  'HomeController@index');
 Route::get('/nosaltres',  'HomeController@nosaltres');
+Route::get('/pakage/{id}', 'HomeController@imatgesPakets');
 Route::get('/logout', '\App\Http\Controllers\Auth\LoginController@logout');
 Route::get('/sitemap.xml', 'SitemapController@index');
 Route::get('/sitemap.xml/imatges', 'SitemapController@imatges');

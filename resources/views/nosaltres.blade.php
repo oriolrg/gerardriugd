@@ -8,7 +8,7 @@
         <meta name="author" content="Oriol Riu Gispert, Tecnolord i Gerard Riu Gisperd" />
         <meta name="copyright" content="Oriol Riu Gispert, Tecnolord" />
 
-        <title>{{isset($nosaltres->nom) ? $nosaltres->nom : ''}} -Nosaltres</title>
+        <title>{{isset($nosaltres->nom) ? $nosaltres->nom : ''}} -Nosaltres {{isset($nosaltres->titol) ? $nosaltres->titol : ''}}</title>
 
         <!-- Fonts -->
         <link href="https://fonts.googleapis.com/css?family=Nunito:200,600" rel="stylesheet">

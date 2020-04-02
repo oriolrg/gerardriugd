@@ -59,11 +59,11 @@ a:active {
     height: 100%;
 }
 
-#cos img {
+.imageGrid {
     transition: transform .9s, filter 1.5s ease-in-out;
     cursor: pointer;
 }
-#cos img:hover{
+.wrapper .imageGrid:hover{
     transform: scale(1.1);
 }
 

@@ -25,23 +25,23 @@
         <link href="{{ asset('css/navigataur.css') }}" rel="stylesheet">
 
         <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.0/css/all.css" integrity="sha384-lZN37f5QGtY3VHgisS14W3ExzMWZxybE1SJSEsQp9S+oqd12jhcu+A56Ebc1zFSJ" crossorigin="anonymous">
-        <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+        <!--<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>-->
 
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
         <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
+                
+
+
         <!-- Favicon and touch icons -->
         <link rel="shortcut icon" href="{{ asset('ico/LogoGerard.png') }}">
     </head>
     <body>
             @include('inicial.navbar.navbar')
             @include('inicial.cos.cos')
-
+        
             @include('inicial.peu.peu')
 
             @include('inicial.cos.individual')
-        <!--<script>
-            AOS.init();
-        </script>-->
     </body>
 </html>

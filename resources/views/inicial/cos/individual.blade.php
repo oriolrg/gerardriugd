@@ -23,18 +23,16 @@
                     <div class="col-lg-8 mx-auto">
                         <div class="modal-body">
                             <img class="individual img-fluid d-block mx-auto" src="{{ asset('public/profile_images/').'/'.$projecte->imatge }}" alt="{{$projecte->titol}}" title="{{$projecte->titol}}">
-                            @foreach ($projecte->paquetImatge as $imatge)
-                                <img class="individual img-fluid d-block mx-auto" src="{{ asset('public/profile_images/').'/'.$imatge->imatge }}" alt="{{$projecte->titol}}" title="{{$projecte->titol}}">
-                            @endforeach
+                            <div id="paket{{$projecte->id}}"></div>
                         </div>
                     </div>
                     <div class="col-lg-4 mx-auto">
                         <div class="modal-body">
                             <!-- Project Details Go Here -->
-                            <h2 class="text-uppercase">{{$projecte->titol}}</h2>
-                            <p class="item-intro text-muted">{{$projecte->descripcioCurta}}</p>
+                            <h1 class="text-uppercase">{{$projecte->titol}}</h1>
+                            <h2 class="item-intro text-muted">{!!$projecte->descripcioCurta!!}</h2>
                             <ul class="list-inline">
-                                <li>{{$projecte->descripcioLlarga}}</li>
+                                <h4>{!!$projecte->descripcioLlarga!!}</h4>
                                 <li></li>
                             </ul>
                                 <a  class="col-3 col-xs-3 col-sm-3 col-md-3 col-lg-3 boto" data-dismiss="modal">

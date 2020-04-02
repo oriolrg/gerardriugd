@@ -60,6 +60,21 @@ class AdministraController extends Controller
         }else{
             $nosaltres = new Nosaltres();
         }
+        //noslaltres 
+        $nosaltres->setTranslation('titol', 'ca', $request->titol);
+        $nosaltres->setTranslation('textCurt', 'ca', $request->textCurta);
+        $nosaltres->setTranslation('textLlarg', 'ca', $request->textLlarga);
+        $nosaltres->setTranslation('titol', 'es', $request->titolES);
+        $nosaltres->setTranslation('textCurt', 'es', $request->textCurtaES);
+        $nosaltres->setTranslation('textLlarg', 'es', $request->textLlargaES);
+        $nosaltres->setTranslation('titol', 'en', $request->titolEN);
+        $nosaltres->setTranslation('textCurt', 'en', $request->textCurtaEN);
+        $nosaltres->setTranslation('textLlarg', 'en', $request->textLlargaEN);
+        if($request->fileNosaltres){
+            $nosaltres->imatge = 'gerardGD.'.$request->fileNosaltres->getClientOriginalExtension();
+            $request->fileNosaltres->move(public_path('profile_images'), $nosaltres->imatge);
+        }
+        //SEO
         $nosaltres->nom = $request->nom;
         $nosaltres->setTranslation('descripcioCurta', 'ca', $request->descripcioCurta);
         $nosaltres->setTranslation('descripcioLlarga', 'ca', $request->descripcioLlarga);
