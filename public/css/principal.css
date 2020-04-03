@@ -215,3 +215,11 @@ a:active {
     width: 100%;
     margin-top: 5px;
 }
+/*X tancar paquet*/
+.fa-times {
+
+    top: 10px;
+    z-index: 90000;
+    right: 22%;
+
+}
