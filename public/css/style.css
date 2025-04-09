@@ -1,0 +1,137 @@
+* {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Arial Narrow', Arial, sans-serif;
+            line-height: 1.1; /* Redueix lleugerament la interlínia */
+            overflow-x: hidden; /* Evitar desplaçament horitzontal */
+    overflow-y: auto;   /* Permetre desplaçament vertical */
+        }
+        p, h1, h2, h3, h4{
+	    color: black;
+		font-weight: 200;
+		font-size: 5vw;
+	    
+	}
+	.vermell{
+	    color: red;
+	}
+        .slideshow-container {
+            position: relative;
+            width: 100vw;
+            height: 100vh;
+        }
+        
+	/* Estil per a tots els slides */
+	.slide {
+	    display: none; /* Amaguem tots els slides per defecte */
+	    position: absolute;
+	    width: 100%;
+	    height: 100%;
+	    top: 0;
+	    left: 0;
+	    z-index: -1; /* Ens assegurem que els slides inactius estan al darrere */
+        overflow-x: hidden; /* Evitar desplaçament horitzontal */
+    overflow-y: auto;   /* Permetre desplaçament vertical */   
+    background-size: cover;      /* La imatge cobreix tota l'àrea del slide */
+    background-position: center; /* Centra la imatge (és a dir, la part important es manté al centre) */
+    background-repeat: no-repeat; /* Evita que la imatge es repeteixi */
+    background-attachment: fixed; /* Opcional, per fer que la imatge es mogui a mesura que fas scroll */
+    min-height: 100vh;     
+
+	}
+
+	/* Estil per a l'slide actiu */
+	.slide.active {
+	    display: block; /* Només el slide actiu es mostra */
+	    position: relative;
+	    z-index: 10; /* L'slide actiu ha de ser visible */
+	}
+
+
+
+        
+    .slide-content {
+        position: absolute;
+        /*transform: translate(-50%, -50%);  Centra el contingut verticalment i horitzontalment */
+        width: 94%;
+        left: 4%;
+        top: 4%;
+        overflow-x: hidden; /* Evitar desplaçament horitzontal */
+    overflow-y: auto;   /* Permetre desplaçament vertical */
+    }
+        
+        .slide-content h2 {
+            font-size: 36px;
+            margin-bottom: 15px;
+            font-weight: 300;
+        }
+        
+        .slide-content p {
+            font-size: 18px;
+            margin-bottom: 20px;
+        }
+        
+        .navigation {
+            position: fixed;
+            top: 30px;
+            right: 30px;
+            z-index: 100;
+        }
+        
+        .navigation a {
+            color: white;
+            text-decoration: none;
+            margin-left: 20px;
+            font-size: 16px;
+            /*text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.7);*/
+            transition: color 0.3s;
+        }
+        
+        .navigation a:hover {
+            color: #d4af37;
+        }
+        a:hover {
+            color: #d4af37;
+        }
+        .dots-container {
+            position: fixed;
+            bottom: 30px;
+            left: 50%;
+            transform: translateX(-50%);
+            z-index: 100;
+            display: flex;
+        }
+        
+        .dot {
+            width: 12px;
+            height: 12px;
+            margin: 0 8px;
+            border-radius: 50%;
+            background-color: rgba(0, 0, 0, 0.5);
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+        
+        .dot.active {
+            background-color: white;
+        }
+        
+        footer {
+            display: none;
+            position: absolute;
+            bottom: 0;
+            width: 100%;
+            padding: 10px;
+            text-align: center;
+            color: white;
+            background-color: rgba(0, 0, 0, 0.5);
+        }
+        .logo img {
+            max-width: 40vw; /* Assegura que no sobrepassi la pantalla */
+            max-height: 10vw; /* Manté la proporció de la imatge */
+            display: block; /* Elimina espais innecessaris al voltant de la imatge */
+        }
